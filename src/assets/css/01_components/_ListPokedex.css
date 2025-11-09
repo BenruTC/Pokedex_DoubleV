@@ -1,0 +1,25 @@
+.img-logo-main {
+    width: 200px;
+    height: 200px;
+}
+
+.pokedex-view {
+    position: relative;
+    height: 500px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.pokedex-footer-view {
+    height: 100px;
+}
+
+.buscador {
+    background-color: #4ad04a;
+    color: #ffffff;
+}
+
+.buscador:focus {
+    background-color: #4ad04a;
+    color: #ffffff;
+}

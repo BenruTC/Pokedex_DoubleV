@@ -1,18 +1,14 @@
 <template>
-    <div>Home</div>
+    <div class="pokedex-view pt-5">
+      <div class="d-flex justify-content-center align-items-center">
+        <img class="img-logo-main" src="/img/pikachu.png" />
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <RouterLink :to="{ name: 'pokemons' }" class="btn btn-danger">Iniciar</RouterLink>
+      </div>
+    </div>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "Pokedex",
-  data() {
-    return {
-    };
-  },
-  mounted() {
-  },
-  methods: {
-  },
-});
+import { RouterLink  } from "vue-router";
 </script>

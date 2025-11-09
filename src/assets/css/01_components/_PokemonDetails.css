@@ -1,0 +1,16 @@
+.detail-pokemon-view {
+    height: 400px;
+    background-color: #ffffff;
+}
+
+.fondo-foto {
+    padding-top: 20px;
+    height: 200px;
+    background: url(/img/fondo-header.png);
+}
+
+.foto-pokemon {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

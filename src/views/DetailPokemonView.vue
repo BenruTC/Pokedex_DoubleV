@@ -1,14 +1,14 @@
 <template>
-  <ListPokemons />
+  <PokemonDetail />
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import ListPokemons from "../pokemons/components/ListPokemons.vue";
+import PokemonDetail from "../pokemons/components/PokemonDetails.vue";
 
 export default defineComponent({
-  name: "PokemonsView",
+  name: "DetailPokemonView",
   components: {
-    ListPokemons,
+    PokemonDetail,
   },
 });
 </script>

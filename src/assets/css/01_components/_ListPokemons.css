@@ -1,0 +1,25 @@
+.list-pokemons {
+    cursor: pointer;
+}
+.list-pokemons:hover {
+    cursor: pointer;
+    background-color: #ffd2d2;
+}
+
+.list-container {
+    position: relative;
+    height: 400px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.list-container-inside {
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.quitar-estilos-link {
+    list-style: none;
+    text-decoration: none;
+    color: #000000;
+}
