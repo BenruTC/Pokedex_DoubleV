@@ -11,4 +11,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { RouterLink  } from "vue-router";
+/**
+ * @namespace Pokedex
+ * @description Componente de la primera vista principal cuando se abre el proyecto
+ */
 </script>

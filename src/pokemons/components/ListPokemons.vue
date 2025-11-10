@@ -38,6 +38,10 @@ import Buscador from "../../shared/components/Buscador.vue";
 import { ListPokemonsUseCase } from  "../domain/usecase/listPokemonsUseCase";
 import { PokemonApiAdapter } from "../adapters/api/pokemonApiAdapter";
 import { Pokemons } from "../domain/models/dataPokemons";
+/**
+ * @namespace ListPokemons
+ * @description Componente donde se lista los pokemons del API 
+ */
 export default defineComponent({
   name: "ListPokemons",
   components: {
@@ -54,6 +58,13 @@ export default defineComponent({
     this.listPokemons("/api/v2/pokemon/?offset=0&limit=20")
   },
   methods: {
+    /**
+     * @memberof ListPokemons
+     * @function listPokemons
+     * @param {string} restApiUrl - URL de la API para obtener la lista de pokemons.
+     * @description Llama al adaptador y al caso de uso para obtener los pokemons.
+     * Actualiza `pokemons` y `pokemonsFiltered` después de 1 segundo.
+     */
     listPokemons(restApiUrl: any) {
         const pokemonRepository = new PokemonApiAdapter();
         const listPokemonsUseCase = new ListPokemonsUseCase(
@@ -66,9 +77,12 @@ export default defineComponent({
             }, 1000)
         });
     },
+    /**
+     * @memberof ListPokemons
+     * @function buscarPokemon
+     * @description Método que realiza la búsqueda en la lista de pokemons
+     */
     buscarPokemon(event) {
-        console.log("Entróoo")
-        console.log(event)
         if (event.length) {
           this.pokemonsFiltered = this.pokemons.filter((pokemon) =>
             `${pokemon.name}`.toLowerCase().includes(event.toLowerCase())

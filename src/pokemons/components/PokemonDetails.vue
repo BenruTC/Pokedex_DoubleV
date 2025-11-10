@@ -54,6 +54,10 @@ import Loading from "../../shared/components/Loading.vue";
 import { DetailPokemonUseCase } from  "../domain/usecase/detailPokemonUseCase";
 import { PokemonApiAdapter } from "../adapters/api/pokemonApiAdapter";
 import { Pokemon } from "../domain/models/dataPokemons";
+/**
+ * @namespace PokemonDetails
+ * @description Componente que muestra el detalle del pokemon seleccionado en ListPokemons 
+ */
 export default defineComponent({
     name: "DetailPokemon",
     props: {
@@ -82,6 +86,12 @@ export default defineComponent({
         this.detailPokemon(url);
     },
     methods: {
+        /**
+         * @memberof PokemonDetails
+         * @function detailPokemon
+         * @param {string} restApiUrl - URL de la API para obtener la lista de pokemons.
+         * @description Llama al adaptador y al caso de uso para obtener el detalle del pokemon.
+         */
         detailPokemon(restApiUrl: any) {
             const pokemonRepository = new PokemonApiAdapter();
             const detailPokemonUseCase = new DetailPokemonUseCase(
@@ -91,6 +101,11 @@ export default defineComponent({
                 this.pokemon = v.data;
             });
         },
+        /**
+         * @memberof PokemonDetails
+         * @function obtenerTipos
+         * @description Método que obtiene los tipos del detalle pokemon
+         */
         obtenerTipos() {
             if (this.pokemon) {
                 this.pokemon.types.forEach(item => {

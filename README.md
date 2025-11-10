@@ -1,48 +1,49 @@
 # Pokedex_DoubleV
 
-This template should help get you started developing with Vue 3 in Vite.
+Pokédex DoubleV es una aplicación web construida con Vue 3, TypeScript y Vite, que consume la PokeAPI
+para mostrar una lista de pokémons y sus detalles.
 
-## Recommended IDE Setup
+Características principales:
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Listado de Pokemons.
+- Filtro de Pokemons por nombre mediante buscador.
+- Vista de detalle de cada Pokemon.
+- Navegación entre rutas usando Vue Router.
+- Componentes reutilizables (Loading, Buscador, MainLayout).
+- Manejo de errores HTTP.
+- Testing unitario con Vitest.
+- Estilos con Bootstrap 5.
 
-## Recommended Browser Setup
+## Arquitectura
+La aplicación sigue una arquitectura tipo Clean Architecture / Hexagonal, separando claramente responsabilidades:
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Adapters: Comunicación con la API (PokemonApiAdapter)
+- Domain / UseCases: Lógica de negocio (listPokemonsUseCase, detailPokemonUseCase)
+- Domain / Models: Modelos de datos (Pokemons, Pokemon)
+- Components / Views: Renderizado de UI y manejo de eventos
+- Helpers: Axios, manejo de errores HTTP
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
+## Instalación
 ```sh
+# Clonar repositorio
+git clone https://github.com/TU_USUARIO/POKEDEX_DOUBLEV.git
+cd POKEDEX_DOUBLEV
+
+# Instalar dependencias
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Levantar servidor de desarrollo
 npm run dev
 ```
-
-### Type-Check, Compile and Minify for Production
+## Variables de entorno
 
 ```sh
-npm run build
+VITE_URL_BASE=https://pokeapi.co
 ```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Ejecución de test
+La aplicación incluye tests unitarios con Vitest.
 
 ```sh
+# Ejecutar tests unitarios
 npm run test:unit
 ```

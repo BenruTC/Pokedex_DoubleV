@@ -11,6 +11,12 @@ pokemonAPI.interceptors.request.use((config: any) => {
   return config;
 });
 
+/**
+ * Interceptor de response
+ * @description Devuelve la respuesta si es exitosa. En caso de error:
+ * - Verifica si hay conexión a Internet.
+ * - Llama al helper `HTTPResponseError` para manejo de errores HTTP.
+ */
 pokemonAPI.interceptors.response.use(
   (response) => {
     return response;
