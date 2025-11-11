@@ -25,8 +25,10 @@ La aplicación sigue una arquitectura tipo Clean Architecture / Hexagonal, separ
 
 ## Instalación
 ```sh
+Instalar Node >= 22.18.11
+
 # Clonar repositorio
-git clone https://github.com/TU_USUARIO/POKEDEX_DOUBLEV.git
+git clone https://github.com/BenruTC/POKEDEX_DOUBLEV.git
 cd POKEDEX_DOUBLEV
 
 # Instalar dependencias
